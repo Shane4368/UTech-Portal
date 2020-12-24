@@ -1,0 +1,94 @@
+.Container {
+    border-radius: 0;
+}
+
+.Container>h5 {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(157, 255, 157);
+}
+
+.Container>p {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 1px dashed black;
+    font-size: 14px;
+}
+
+.Container>p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Container>p.disable-underline:hover {
+    cursor: auto;
+    text-decoration: none;
+}
+
+.Container>p>a {
+    color: blue;
+    text-decoration: none;
+}
+
+.panel-container {
+	display: flex;
+	margin: auto;
+    width: calc(100vw - 2em);
+}
+
+.left-panel {
+    flex: 1;
+    border-right: 1px solid black;
+    width: 15%;
+}
+
+@media only screen and (max-width:800px) {
+    .left-panel {
+        display: none;
+    }
+}
+
+.left-panel>a {
+    text-align: center;
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.left-panel>a:hover {
+    background-color: rgb(143, 255, 148);
+}
+
+.middle-panel {
+    flex: 2;
+}
+
+.right-panel {
+    flex: 2;
+}
+
+.right-panel .Container>div {
+    display: flex;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.right-panel .Container div>div {
+    display: inline;
+    border: 1px dashed black;
+    border-left: none;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (max-width:700px) {
+    .panel-container {
+		display: block;
+    }
+}

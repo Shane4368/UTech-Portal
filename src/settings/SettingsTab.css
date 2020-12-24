@@ -1,0 +1,14 @@
+.Container>div{
+	padding: 1em;
+}
+.Container>div>button {
+    border: none;
+    display: block;
+    padding: 1em;
+    width: 100%;
+}
+
+.Container>div>button:hover{
+	cursor: pointer;
+	background-color: rgb(197, 197, 197);
+}
