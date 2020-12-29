@@ -1,9 +1,9 @@
-import "./ContainerAbsolute.css";
+import "./ContainerComponent.css";
 
-function ContainerAbsolute(props: any): JSX.Element {
-	return (
-		<div className="ContainerAbsolute">{props.children}</div>
-	);
+function ContainerComponent(props: { [k: string]: any }): JSX.Element {
+    return (
+        <div className="ContainerComponent">{props.children}</div>
+    );
 }
 
-export default ContainerAbsolute;
+export default ContainerComponent;

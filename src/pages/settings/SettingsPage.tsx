@@ -1,31 +1,31 @@
 import React from "react";
-import Tabs from "../tabs/Tabs";
-import FooterBox from "../footer/FooterBox";
+import TopNavbarComponent from "../../components/topnavbar/TopNavbarComponent";
+import FooterComponent from "../../components/footer/FooterComponent";
 
-import "../container/Container.css";
-import "./SettingsTab.css";
+import "../../components/container/ContainerComponent.css";
+import "./SettingsPage.css";
 
-function SettingsTab(): JSX.Element {
-	React.useEffect(() => {
-		document.title = "UTech Portal | Settings";
-	});
+function SettingsPage(): JSX.Element {
+    React.useEffect(() => {
+        document.title = "UTech Portal | Settings";
+    });
 
-	return (
-		<div>
-			<Tabs />
+    return (
+        <div>
+            <TopNavbarComponent />
 
-			<div className="Container">
-				<div>
-					<button>Personal Information</button>
-					<button>Appearance</button>
-					<button>Change Password</button>
-					<button>Change Security Questions and Answers</button>
-				</div>
-			</div>
+            <div className="Container">
+                <div>
+                    <button>Personal Information</button>
+                    <button>Appearance</button>
+                    <button>Change Password</button>
+                    <button>Change Security Questions and Answers</button>
+                </div>
+            </div>
 
-			<FooterBox />
-		</div>
-	);
+            <FooterComponent />
+        </div>
+    );
 }
 
-export default SettingsTab;
+export default SettingsPage;

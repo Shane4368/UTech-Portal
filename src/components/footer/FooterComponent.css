@@ -1,11 +1,11 @@
 footer {
-	border-top: 1px solid black;
-	width: calc(100% - 2em);
-	padding: 1em;
-	bottom: 0;
-	margin-top: 1em;
-	font-size: 12px;
-	font-weight: 8px;
+    border-top: 1px solid black;
+    width: calc(100% - 2em);
+    padding: 1em;
+    bottom: 0;
+    margin-top: 1em;
+    font-size: 12px;
+    font-weight: 8px;
 }
 
 img.inline-block {

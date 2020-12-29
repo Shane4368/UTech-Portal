@@ -1,0 +1,22 @@
+{
+	"label": "Important Dates",
+	"description": "Upcoming Events 2020/2021",
+	"rows": [
+		{
+			"date": "August 24-Dec 11",
+			"event": "SEMESTER 1 Academic Year 2020/2021 (16 weeks)"
+		},
+		{
+			"date": "September 07-November 09",
+			"event": "Submission of withdrawal from a module offered in Semester 1, refunds not applicable"
+		},
+		{
+			"date": "September 14-November 09",
+			"event": "Submission of requests for withdrawal from Course of Study for Semester 1 (See Regulation 3, Student Handbook and Fee Payment Policy)"
+		},
+		{
+			"date": "December 11, 2020",
+			"event": "Semester 1 ends"
+		}
+	]
+}

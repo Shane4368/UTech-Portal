@@ -1,0 +1,10 @@
+{
+	"label": "Fee Information",
+	"description": null,
+	"rows": [
+		"Sponsorship Information",
+		"Grant Information",
+		"Payments to Your Account",
+		"Your Account Transactions"
+	]
+}
