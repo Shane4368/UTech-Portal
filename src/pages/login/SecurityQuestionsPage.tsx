@@ -22,7 +22,7 @@ function SecurityQuestionsPage(): JSX.Element {
                     <span>Security Questions</span>
                 </div>
 
-                <div>
+                <div className="gray">
                     <p>Answer the questions displayed and then click on the "Continue" button.</p>
                 </div>
 

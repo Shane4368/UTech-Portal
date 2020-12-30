@@ -1,5 +1,6 @@
 import React from "react";
 import TopNavbarComponent from "../../components/topnavbar/TopNavbarComponent";
+import ContainerComponent from "../../components/container/ContainerComponent";
 import FooterComponent from "../../components/footer/FooterComponent";
 
 import NoticeBoardData from "./notice-board.json";
@@ -8,11 +9,17 @@ import ImportantDatesData from "./important-dates.json";
 import PersonalLinksData from "./personal-links.json";
 
 import "../../components/container/ContainerComponent.css";
+import "./ImportantDates.css";
 import "./HomePage.css";
 
 type PersonalLink = {
     name: string;
     url: string;
+};
+
+type ImportantDate = {
+    date: string;
+    event: string;
 };
 
 function HomePage(): JSX.Element {
@@ -24,8 +31,7 @@ function HomePage(): JSX.Element {
         NoticeBoardData, IntrayData, ImportantDatesData, PersonalLinksData
     ], []);
 
-    const personalLinks = memoizedValues.find(x => x.label === "Personal Links");
-    const importantDates = memoizedValues.find(x => x.label === "Important Dates");
+    const [noticeBoard, intray, importantDates, personalLinks] = memoizedValues;
 
     return (
         <div>
@@ -33,59 +39,61 @@ function HomePage(): JSX.Element {
 
             <div className="panel-container">
                 <div className="left-panel">
-                    <a href="#Notice_Board">Notice Board</a>
-                    <a href="#Intray">Intray</a>
-                    <a href="#Personal_Links">Personal Links</a>
+                    <ul>
+                        <li><a href="#Notice_Board">{noticeBoard.label}</a></li>
+                        <li><a href="#Intray">{intray.label}</a></li>
+                        <li><a href="#Personal_Links">{personalLinks.label}</a></li>
+                    </ul>
                 </div>
 
                 <div className="middle-panel">
-                    <div className="Container">
-                        <h5 id="Notice_Board">Notice Board</h5>
+                    <ContainerComponent>
+                        <div id="Notice_Board" className="title bg-colour-green">
+                            {noticeBoard.label}
+                        </div>
                         {
-                            (memoizedValues.find(x => x.label === "Notice Board")?.rows as string[])
-                                .map((x: string) => {
-                                    return (<p>{x}</p>);
-                                })
+                            (noticeBoard.rows as string[])
+                                .map(x => (<div>{x}</div>))
                         }
-                    </div>
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5 id="Intray">Intray</h5>
+                    <ContainerComponent>
+                        <div id="Intray" className="title bg-colour-blue">
+                            {intray.label}
+                        </div>
                         {
-                            (memoizedValues.find(x => x.label === "Intray")?.rows as string[])
-                                .map((x: string) => {
-                                    return (<p>{x}</p>);
-                                })
+                            (intray.rows as string[]).map(x => (<div>{x}</div>))
                         }
-                    </div>
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5 id="Personal_Links">Personal Links</h5>
-                        <p className="disable-underline">{personalLinks?.description}</p>
+                    <ContainerComponent>
+                        <div id="Personal_Links" className="title bg-colour-green">
+                            {personalLinks.label}
+                        </div>
+                        <div className="description">{personalLinks.description}</div>
                         {
-                            (personalLinks?.rows as PersonalLink[]).map(x => {
-                                return (
-                                    <p><a href={x.url}>{x.name}</a></p>
-                                );
-                            })
+                            (personalLinks.rows as PersonalLink[])
+                                .map(x => (<div><a href={x.url}>{x.name}</a></div>))
                         }
-                    </div>
+                    </ContainerComponent>
                 </div>
 
                 <div className="right-panel">
-                    <div className="Container">
-                        <h5>Important Dates</h5>
-                        <p className="disable-underline">{importantDates?.description}</p>
-                        {
-                            (importantDates?.rows as any).map((x: any) => {
-                                return (
-                                    <div>
-                                        <div>{x.date}</div>
-                                        <div>{x.event}</div>
-                                    </div>
-                                );
-                            })
-                        }
+                    <div id="ImportantDatesContainer">
+                        <div><span>{importantDates.label}</span></div>
+                        <table>
+                            <caption>{importantDates.description}</caption>
+                            {
+                                (importantDates.rows as ImportantDate[]).map(x => {
+                                    return (
+                                        <tr>
+                                            <td>{x.date}</td>
+                                            <td>{x.event}</td>
+                                        </tr>
+                                    );
+                                })
+                            }
+                        </table>
                     </div>
                 </div>
             </div>

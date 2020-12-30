@@ -22,7 +22,7 @@ function LoginPage(): JSX.Element {
                     <span>Login</span>
                 </div>
 
-                <div>
+                <div className="red">
                     <p>
                         <u><strong>For UTech students only:</strong></u> Enter your ID number for your username.
                         If you are logging on for the first time, please use your date of birth as your password.
@@ -52,7 +52,7 @@ function LoginPage(): JSX.Element {
                     <input id="login-btn" type="submit" value="Login"></input>
                 </div>
 
-                <div>
+                <div className="gray">
                     <p>
                         If you have forgotten your password please enter your username above
                         and then click the link below to have a new password emailed to you.

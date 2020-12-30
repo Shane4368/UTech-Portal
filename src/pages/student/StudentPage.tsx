@@ -1,5 +1,6 @@
 import React from "react";
 import TopNavbarComponent from "../../components/topnavbar/TopNavbarComponent";
+import ContainerComponent from "../../components/container/ContainerComponent";
 import FooterComponent from "../../components/footer/FooterComponent";
 
 import AcademicInformationData from "./academic-information.json";
@@ -9,7 +10,8 @@ import StudentActionsData from "./student-actions.json";
 import UsefulLinksData from "./useful-links.json";
 
 import "../../components/container/ContainerComponent.css";
-import "../home/HomePage.css";
+import "../home/HomePage.css"; // Because StudentPage has same layout.
+import "./StudentsReports.css";
 
 function StudentPage(): JSX.Element {
     React.useEffect(() => {
@@ -38,73 +40,77 @@ function StudentPage(): JSX.Element {
 
             <div className="panel-container">
                 <div className="left-panel">
-                    <a href="#Academic_Information">Academic Information</a>
-                    <a href="#Fee_Information">Fee Information</a>
-                    <a href="#Career_Placements">Career and Placements</a>
-                    <a href="#Academic_Advisor">Academic Advisor</a>
+                    <ul>
+                        <li><a href="#Academic_Information">{academicInfo.label}</a></li>
+                        <li><a href="#Fee_Information">{feeInfo.label}</a></li>
+                        <li><a href="#Career_Placements">{careerNPlacements.label}</a></li>
+                        <li><a href="#Academic_Advisor">Academic Advisor</a></li>
+                    </ul>
                 </div>
 
                 <div className="middle-panel">
-                    <div className="Container">
-                        <h5 id="Academic_Information">Academic Information</h5>
-                        {academicInfo?.rows.map(x => (<p>{x}</p>))}
-                    </div>
+                    <ContainerComponent>
+                        <div id="Academic_Information" className="title bg-colour-green">
+                            {academicInfo.label}
+                        </div>
+                        {academicInfo.rows.map(x => (<div>{x}</div>))}
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5 id="Fee_Information">Fee Information</h5>
-                        {feeInfo?.rows.map(x => (<p>{x}</p>))}
-                    </div>
+                    <ContainerComponent>
+                        <div id="Fee_Information" className="title bg-colour-green">
+                            {feeInfo.label}
+                        </div>
+                        {feeInfo.rows.map(x => (<div>{x}</div>))}
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5 id="Career_Placements">Career and Placements</h5>
-                        {careerNPlacements?.rows.map(x => (<p>{x}</p>))}
-                    </div>
+                    <ContainerComponent>
+                        <div id="Career_Placements" className="title bg-colour-green">
+                            {careerNPlacements.label}
+                        </div>
+                        {careerNPlacements.rows.map(x => (<div>{x}</div>))}
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5 id="Academic_Advisor">Academic Advisor</h5>
-                        <p className="disable-underline">
+                    <ContainerComponent>
+                        <div id="Academic_Advisor" className="title bg-colour-green">
+                            Academic Advisor
+                        </div>
+                        <div className="description">
                             Information about your personal tutor
-						</p>
-                        <p>Details of your advisor</p>
-                    </div>
+                        </div>
+                        <div>Details of your advisor</div>
+                    </ContainerComponent>
                 </div>
 
                 <div className="right-panel">
-                    <div className="Container">
-                        <h5>Student's Reports</h5>
-                        <p className="disable-underline">
+                    <div id="StudentsReportsContainer">
+                        <div><span>Student's Reports</span></div>
+                        <div>
                             Please select a report from the drop down list and click the 'Run Report' button
                             in order to view the report.
-						</p>
-                        <select>
-                            <option>-- Select Report --</option>
-                            <option>Provisional Transcript of Results</option>
-                            <option>Exam Timetable</option>
-                            <option>Account Balance Information</option>
-                            <option>Account Transactions</option>
-                        </select>
-                        <button>Run Report</button>
+                        </div>
+                        <div>
+                            <select>
+                                <option>-- Select Report --</option>
+                                <option>Provisional Transcript of Results</option>
+                                <option>Exam Timetable</option>
+                                <option>Account Balance Information</option>
+                                <option>Account Transactions</option>
+                            </select>
+                            <button>Run Report</button>
+                        </div>
                     </div>
 
-                    <div className="Container">
-                        <h5>Student Actions</h5>
-                        <p className="disable-underline">
-                            {studentActions?.description}
-                        </p>
-                        {
-                            studentActions?.rows.map(x => (<p>{x}</p>))
-                        }
-                    </div>
+                    <ContainerComponent>
+                        <div className="title bg-colour-blue">{studentActions.label}</div>
+                        <div className="description">{studentActions.description}</div>
+                        {studentActions.rows.map(x => (<div>{x}</div>))}
+                    </ContainerComponent>
 
-                    <div className="Container">
-                        <h5>Useful Links</h5>
-                        <p className="disable-underline">
-                            {usefulLinks?.description}
-                        </p>
-                        {
-                            usefulLinks?.rows.map(x => (<p>{x}</p>))
-                        }
-                    </div>
+                    <ContainerComponent>
+                        <div className="title bg-colour-dark-green">{usefulLinks.label}</div>
+                        <div className="description">{usefulLinks.description}</div>
+                        {usefulLinks.rows.map(x => (<div>{x}</div>))}
+                    </ContainerComponent>
                 </div>
             </div>
 

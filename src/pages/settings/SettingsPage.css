@@ -1,14 +1,22 @@
-.Container>div{
-    padding: 1em;
-}
-.Container>div>button {
+.panel-container .left-panel button {
+	outline: none;
+	font-size: 16px;
+	background-color: inherit;
+	margin-top: 1em;
     border: none;
     display: block;
     padding: 1em;
     width: 100%;
 }
 
-.Container>div>button:hover{
+.panel-container .left-panel button:hover {
     cursor: pointer;
-    background-color: rgb(197, 197, 197);
+    background-color:white;
+}
+
+#dead-panel{
+	flex: 4;
+	font-size: 3em;
+	margin: 2.5em 1em;
+	color: gray;
 }

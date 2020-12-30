@@ -5,7 +5,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width:630px) {
@@ -14,54 +14,54 @@
     }
 }
 
-form {
+.login-container form {
     margin: 1em;
     font-size: 14px;
 }
 
-form>div {
+.login-container form>div {
     margin: 1em;
 }
 
-form>div:nth-of-type(1) {
+.login-container form>div:nth-of-type(1) {
     text-align: center;
 }
 
-form>div:nth-of-type(1)>img {
+.login-container form>div:nth-of-type(1)>img {
     height: 60px;
     display: block;
     margin: auto;
 }
 
-form>div:nth-of-type(1)>span {
+.login-container form>div:nth-of-type(1)>span {
     display: block;
     font-weight: bold;
     font-size: 18px;
 }
 
 /* Login instructions */
-form>div:nth-of-type(2) {
+.login-container form .red {
     color: red;
     background-color: rgb(255, 235, 235);
 }
 
 /* Forgot password instructions */
-form>div:nth-last-of-type(2) {
+.login-container form .gray {
     background-color: rgb(230, 230, 230);
 }
 
-form>div:nth-last-of-type(1)>span {
+.login-container form>div:nth-last-of-type(1)>span {
     display: block;
     text-align: right;
     color: blue;
 }
 
-form>div:nth-last-of-type(1)>span:hover {
+.login-container form>div:nth-last-of-type(1)>span:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-form>div>input {
+.login-container form>div>input {
     width: calc(100% - 20px);
     padding: 8px;
 }

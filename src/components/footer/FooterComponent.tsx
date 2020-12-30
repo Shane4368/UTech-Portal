@@ -4,40 +4,46 @@ import "./FooterComponent.css";
 const institutionName = "University of Technology, Jamaica";
 
 function FooterComponent(): JSX.Element {
-    return (
-        <footer>
-            <div className="flex-container">
-                <div className="institution inline-block">
-                    <div>
-                        <img className="inline-block" src={utechCrest}></img>
-                    </div>
+	return (
+		<footer className="FooterComponent">
+			<div className="flex-container">
+				<div className="institution inline-block">
+					<div><img src={utechCrest}></img></div>
 
-                    <div>
-                        <h4>{institutionName}</h4>
-                        <p>
-                            237 Old Hope Road, Kingston 6, Jamaica W.I.<br />
+					<div>
+						<span>{institutionName}</span>
+						<p>
+							237 Old Hope Road, Kingston 6, Jamaica W.I.<br />
                             Tel: (876) 927-1680-8<br />
                             Fax: (876) 977-4388 | (876) 927-1925
                         </p>
-                    </div>
-                </div>
+					</div>
+				</div>
 
-                <div className="inline-block">
-                    <p>
-                        <b>Social Media</b><br />
-                        <a target="_blank" href="https://www.facebook.com/UTechJa/">Facebook</a><br />
-                        <a target="_blank" href="https://twitter.com/utechjamaica">Twitter</a><br />
-                        <a target="_blank" href="https://www.instagram.com/utechjamaica/">Instagram</a><br />
-                        <a target="_blank" href="https://www.youtube.com/user/utechjamaica">YouTube</a><br/>
-                    </p>
-                </div>
-            </div>
+				<div>
+					<span>Social Media</span>
+					<ul>
+						<li>
+							<a target="_blank" href="https://www.facebook.com/UTechJa/">Facebook</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://twitter.com/utechjamaica">Twitter</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.instagram.com/utechjamaica/">Instagram</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.youtube.com/user/utechjamaica">YouTube</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 
-            <div className="center">
-                <p>Copyright © 2020 {institutionName}. All rights reserved.</p>
-            </div>
-        </footer>
-    );
+			<div>
+				<p>Copyright © 2020 {institutionName}. All rights reserved.</p>
+			</div>
+		</footer>
+	);
 }
 
 export default FooterComponent;

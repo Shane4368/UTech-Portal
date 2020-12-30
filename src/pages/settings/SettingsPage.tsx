@@ -14,13 +14,16 @@ function SettingsPage(): JSX.Element {
         <div>
             <TopNavbarComponent />
 
-            <div className="Container">
-                <div>
+            <div className="panel-container">
+                <div className="left-panel">
                     <button>Personal Information</button>
                     <button>Appearance</button>
                     <button>Change Password</button>
                     <button>Change Security Questions and Answers</button>
-                </div>
+				</div>
+				<div id="dead-panel">
+					<span>Pretend something is actually here.</span>
+				</div>
             </div>
 
             <FooterComponent />

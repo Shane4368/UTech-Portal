@@ -14,21 +14,21 @@
     }
 }
 
-form {
+.login-container form {
     margin: 1em;
     font-size: 14px;
 }
 
-form>div {
+.login-container form>div {
     margin: 1em;
 }
 
-form>div:nth-of-type(2) {
+.login-container form .gray {
     background-color: rgb(230, 230, 230);
     color: black;
 }
 
-form>div:nth-of-type(3) {
+.login-container form>div:nth-of-type(3) {
     background-color: inherit;
 }
 

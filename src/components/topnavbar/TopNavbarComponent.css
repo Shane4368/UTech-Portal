@@ -1,21 +1,17 @@
-.Tabs {
-    padding: 1em;
+.TopNavbarComponent {
     border-bottom: 1px solid black;
-    background-color: gold;
+    background-color: #22cdba;
     font-weight: bolder;
 }
 
-nav a {
+.TopNavbarComponent>nav>a {
     padding: 1em;
+    display: inline-block;
     text-decoration: none;
     color: black;
 }
 
-nav a:hover{
-    background-color: rgba(255,255, 255, 0.5);
-}
-
-nav a.active{
-    background-color: white;
-    border-bottom: 1px solid white;
+.TopNavbarComponent>nav>a:hover,
+.TopNavbarComponent>nav>a.active {
+    text-decoration: underline #447be2 3px;
 }

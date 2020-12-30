@@ -1,14 +1,61 @@
-.Container {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    margin: auto;
-    margin-top: 1em;
+.ContainerComponent {
+    margin: 1em 0;
     border: 1px solid black;
+    overflow: hidden;
+    border-radius: 0.5em 0.5em 0 0;
+    font-size: 14px;
 }
 
-@media only screen and (min-width: 500px) {
-    .Container {
-        width: 95%;
-    }
+.ContainerComponent>div:nth-child(odd) {
+    background-color: rgb(231, 231, 231);
+}
+
+.ContainerComponent>div {
+    padding: 0 8px;
+}
+
+.ContainerComponent>div:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ContainerComponent .title {
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.ContainerComponent .title.bg-colour-green {
+    background-color: #22cdba;
+}
+
+.ContainerComponent .title.bg-colour-dark-green {
+    background-color: #168f54;
+}
+
+.ContainerComponent .title.bg-colour-blue {
+    background-color: #447be2;
+}
+
+.ContainerComponent .description {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    text-decoration: none;
+}
+
+.ContainerComponent .title:hover,
+.ContainerComponent .description:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.ContainerComponent a {
+    color: blue;
+    text-decoration: none;
+}
+
+.ContainerComponent a:hover {
+    text-decoration: underline;
 }
