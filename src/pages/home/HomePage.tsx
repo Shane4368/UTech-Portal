@@ -25,7 +25,7 @@ type ImportantDate = {
 function HomePage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Home";
-    });
+    }, []);
 
     const memoizedValues = React.useMemo(() => [
         NoticeBoardData, IntrayData, ImportantDatesData, PersonalLinksData

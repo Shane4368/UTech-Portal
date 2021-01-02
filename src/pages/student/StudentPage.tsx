@@ -16,7 +16,7 @@ import "./StudentsReports.css";
 function StudentPage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Student";
-    });
+    }, []);
 
     const memoizedValues = React.useMemo(() => [
         AcademicInformationData,

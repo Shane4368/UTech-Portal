@@ -10,15 +10,15 @@
     }
 
     .panel-container .middle-panel {
-        margin-left: 0.5em;
+        margin-left: 0.8em;
     }
 }
 
 .panel-container .left-panel {
     flex: 1;
-    margin-right: 0.5em;
-    background-color: rgb(230, 230, 230);
-    border-right: 1px solid black;
+    margin-right: 0.8em;
+    background-color:var(--site-dim-colour);
+    border-right: 1px solid var(--site-colour-1);
     width: 15%;
 }
 
@@ -39,16 +39,17 @@
     display: block;
     padding: 1em;
     text-decoration: none;
-    color: black;
+    color: var(--site-colour-2);
 }
 
 .panel-container .left-panel a:hover {
-    background-color: white;
+    background-color: var(--site-base-colour);
+    color: var(--site-colour-3);
 }
 
 .panel-container .middle-panel {
     flex: 2;
-    padding-right: 0.5em;
+    margin-right: 0.8em;
 }
 
 .panel-container .right-panel {

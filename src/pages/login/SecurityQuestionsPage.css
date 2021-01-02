@@ -1,6 +1,6 @@
 .login-container {
     border-radius: 1em;
-    border: 1px solid black;
+    border: 1px solid var(--site-colour-1);
     max-width: 600px;
     position: absolute;
     top: 50%;
@@ -24,8 +24,8 @@
 }
 
 .login-container form .gray {
-    background-color: rgb(230, 230, 230);
-    color: black;
+    color: var(--login-info-text-colour);
+    background-color: var(--login-info-bg-colour);
 }
 
 .login-container form>div:nth-of-type(3) {
@@ -33,19 +33,19 @@
 }
 
 #continue-btn {
-    background-color: navy;
-    color: white;
+    background-color: var(--login-btn-colour);
+    color: var(--site-base-colour);
     width: 100%;
     font-size: 14px;
     padding: 1em;
     font-weight: bolder;
-    border: 2px solid navy;
+    border: 2px solid var(--login-btn-colour);
 }
 
 #continue-btn:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 128, 0.3);
-    color: navy;
+    color: var(--login-btn-hover-colour);
     transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;

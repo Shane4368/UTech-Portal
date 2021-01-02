@@ -6,7 +6,7 @@ import "./LoginPage.css";
 function LoginPage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Login";
-    });
+    }, []);
 
     function handleSubmit(e: React.FormEvent): void {
         e.preventDefault();

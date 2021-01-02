@@ -1,6 +1,6 @@
 #ImportantDatesContainer {
     margin: 1em 0;
-    border: 1px solid black;
+    border: 1px solid var(--site-colour-1);
     border-bottom: none;
     border-left: none;
     border-right: none;
@@ -11,12 +11,12 @@
 
 #ImportantDatesContainer span {
     display: inherit;
-    border: 1px solid black;
+    border: 1px solid var(--site-colour-1);
     border-bottom: none;
     border-top: none;
     background-color: #22cdba;
     font-weight: bold;
-    color: white;
+    color: var(--site-base-colour);
     padding: 8px;
 }
 
@@ -29,7 +29,7 @@
 #ImportantDatesContainer table,
 #ImportantDatesContainer caption,
 #ImportantDatesContainer td {
-    border: 1px solid black;
+    border: 1px solid var(--site-colour-1);
     border-collapse: collapse;
 }
 
@@ -40,6 +40,6 @@
     color: red;
 }
 
-#ImportantDatesContainer td{
+#ImportantDatesContainer td {
     padding: 0 8px;
 }

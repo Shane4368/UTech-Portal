@@ -1,7 +1,55 @@
+:root {
+    --site-base-colour: white;
+    --site-dim-colour: #e6e6e6;
+    --site-colour-1: black;
+    --site-colour-2: var(--site-colour-1);
+    --site-colour-3: var(--site-colour-1);
+
+    --login-notice-text-colour: red;
+    --login-notice-bg-colour: #ffebeb;
+    --login-info-text-colour: var(--site-colour-2);
+    --login-info-bg-colour: var(--site-dim-colour);
+    --login-btn-colour: navy;
+    --login-btn-hover-colour: navy;
+
+    --focus-text-colour: black;
+    --hyperlink-colour: blue;
+
+    --input-text-colour: var(--site-colour-3);
+    --input-border-colour: var(--site-colour-1);
+    --input-bg-colour: var(--site-dim-colour);
+
+    --button-border-colour: var(--site-colour-2);
+    --button-select-option-bg-colour: var(--site-base-colour);
+    --button-select-option-text-colour: var(--site-colour-2);
+
+    --select-focus-colour: var(--site-base-colour);
+}
+
+html[data-theme="dark"] {
+    --site-base-colour: black;
+    --site-dim-colour: #0f0f0f;
+    --site-colour-1: #2a2a2a;
+    --site-colour-2: #949494;
+    --site-colour-3: #bfbfbf;
+
+    --login-notice-text-colour: #e60000;
+    --login-notice-bg-colour: #ff000017;
+    --login-info-bg-colour: #ffffff0d;
+    --login-btn-colour: navy;
+    --login-btn-hover-colour: blue;
+
+    --focus-text-colour: white;
+    --hyperlink-colour: #0059ff;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    background-color: var(--site-base-colour);
+    color: var(--site-colour-3);
 }
 
 body {
@@ -15,4 +63,23 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+input {
+    color: var(--input-text-colour);
+    background-color: var(--input-bg-colour);
+    border: 1px solid var(--input-border-colour);
+}
+
+button:hover,
+input:focus,
+select:focus {
+    color: var(--focus-text-colour);
+}
+
+button,
+select,
+select option {
+    background-color: var(--site-base-colour);
+    color: var(--site-colour-2);
 }

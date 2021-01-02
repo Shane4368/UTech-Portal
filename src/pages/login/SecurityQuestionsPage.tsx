@@ -6,7 +6,7 @@ import "./SecurityQuestionsPage.css";
 function SecurityQuestionsPage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Security Questions";
-    });
+    }, []);
 
     function handleSubmit(e: React.FormEvent): void {
         e.preventDefault();

@@ -1,5 +1,5 @@
 .FooterComponent {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--site-colour-1);
     width: calc(100% - 2em);
     padding: 1em;
     bottom: 0;
@@ -31,9 +31,13 @@
     margin: 0;
 }
 
+.FooterComponent .flex-container .institution address {
+    font-style: normal;
+}
+
 .FooterComponent>div:nth-of-type(2) {
     text-align: center;
-    border-top: 1px solid gray;
+    border-top: 1px solid var(--site-colour-1);
 }
 
 .FooterComponent .flex-container span {
@@ -46,11 +50,20 @@
     padding: 0;
 }
 
+.FooterComponent,
 .FooterComponent .flex-container a {
     text-decoration: none;
-    color: black;
+    color: var(--site-colour-2);
 }
 
 .FooterComponent .flex-container a:hover {
     text-decoration: underline;
+}
+
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    cursor: pointer;
 }
