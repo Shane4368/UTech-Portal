@@ -2,8 +2,8 @@ import React from "react";
 import TopNavbarComponent from "../../components/topnavbar/TopNavbarComponent";
 import FooterComponent from "../../components/footer/FooterComponent";
 
-import "../../components/container/ContainerComponent.css";
-import "./SettingsPage.css";
+import "../../components/container/ContainerComponent.scss";
+import "./SettingsPage.scss";
 
 function SettingsPage(): JSX.Element {
     React.useEffect(() => {
@@ -11,24 +11,24 @@ function SettingsPage(): JSX.Element {
     }, []);
 
     function handleButtonClick(e: React.MouseEvent): void {
-        let element: HTMLHeadingElement;
+        let id: string;
         const textContent = (e.target as HTMLButtonElement).textContent;
 
         switch (textContent) {
             case "Personal Information":
-                element = document.getElementById("PersonalInformation")! as HTMLHeadingElement;
+                id = "PersonalInformation";
                 break;
             case "Appearance":
-                element = document.getElementById("Appearance")! as HTMLHeadingElement;
+                id = "Appearance";
                 break;
             case "Change Password":
-                element = document.getElementById("ChangePassword")! as HTMLHeadingElement;
+                id = "ChangePassword";
                 break;
             default:
-                element = document.getElementById("QuestionsNAnswers")! as HTMLHeadingElement;
+                id = "QuestionsNAnswers";
         }
 
-        element.scrollIntoView();
+        document.getElementById(id)?.scrollIntoView();
     }
 
     function handleThemeClick(e: React.MouseEvent): void {

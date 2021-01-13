@@ -9,30 +9,14 @@ import CareerAndPlacementsData from "./career-and-placements.json";
 import StudentActionsData from "./student-actions.json";
 import UsefulLinksData from "./useful-links.json";
 
-import "../../components/container/ContainerComponent.css";
-import "../home/HomePage.css"; // Because StudentPage has same layout.
-import "./StudentsReports.css";
+import "../../components/container/ContainerComponent.scss";
+import "../home/HomePage.scss"; // Because StudentPage has same layout.
+import "./StudentsReports.scss";
 
 function StudentPage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Student";
     }, []);
-
-    const memoizedValues = React.useMemo(() => [
-        AcademicInformationData,
-        FeeInformationData,
-        CareerAndPlacementsData,
-        StudentActionsData,
-        UsefulLinksData
-    ], []);
-
-    const [
-        academicInfo,
-        feeInfo,
-        careerNPlacements,
-        studentActions,
-        usefulLinks
-    ] = memoizedValues;
 
     return (
         <div>
@@ -41,9 +25,9 @@ function StudentPage(): JSX.Element {
             <div className="panel-container">
                 <div className="left-panel">
                     <ul>
-                        <li><a href="#Academic_Information">{academicInfo.label}</a></li>
-                        <li><a href="#Fee_Information">{feeInfo.label}</a></li>
-                        <li><a href="#Career_Placements">{careerNPlacements.label}</a></li>
+                        <li><a href="#Academic_Information">{AcademicInformationData.label}</a></li>
+                        <li><a href="#Fee_Information">{FeeInformationData.label}</a></li>
+                        <li><a href="#Career_Placements">{CareerAndPlacementsData.label}</a></li>
                         <li><a href="#Academic_Advisor">Academic Advisor</a></li>
                     </ul>
                 </div>
@@ -51,23 +35,23 @@ function StudentPage(): JSX.Element {
                 <div className="middle-panel">
                     <ContainerComponent>
                         <div id="Academic_Information" className="title bg-colour-green">
-                            {academicInfo.label}
+                            {AcademicInformationData.label}
                         </div>
-                        {academicInfo.rows.map(x => (<div>{x}</div>))}
+                        {AcademicInformationData.rows.map(x => (<div>{x}</div>))}
                     </ContainerComponent>
 
                     <ContainerComponent>
                         <div id="Fee_Information" className="title bg-colour-green">
-                            {feeInfo.label}
+                            {FeeInformationData.label}
                         </div>
-                        {feeInfo.rows.map(x => (<div>{x}</div>))}
+                        {FeeInformationData.rows.map(x => (<div>{x}</div>))}
                     </ContainerComponent>
 
                     <ContainerComponent>
                         <div id="Career_Placements" className="title bg-colour-green">
-                            {careerNPlacements.label}
+                            {CareerAndPlacementsData.label}
                         </div>
-                        {careerNPlacements.rows.map(x => (<div>{x}</div>))}
+                        {CareerAndPlacementsData.rows.map(x => (<div>{x}</div>))}
                     </ContainerComponent>
 
                     <ContainerComponent>
@@ -101,15 +85,15 @@ function StudentPage(): JSX.Element {
                     </div>
 
                     <ContainerComponent>
-                        <div className="title bg-colour-blue">{studentActions.label}</div>
-                        <div className="description">{studentActions.description}</div>
-                        {studentActions.rows.map(x => (<div>{x}</div>))}
+                        <div className="title bg-colour-blue">{StudentActionsData.label}</div>
+                        <div className="description">{StudentActionsData.description}</div>
+                        {StudentActionsData.rows.map(x => (<div>{x}</div>))}
                     </ContainerComponent>
 
                     <ContainerComponent>
-                        <div className="title bg-colour-dark-green">{usefulLinks.label}</div>
-                        <div className="description">{usefulLinks.description}</div>
-                        {usefulLinks.rows.map(x => (<div>{x}</div>))}
+                        <div className="title bg-colour-dark-green">{UsefulLinksData.label}</div>
+                        <div className="description">{UsefulLinksData.description}</div>
+                        {UsefulLinksData.rows.map(x => (<div>{x}</div>))}
                     </ContainerComponent>
                 </div>
             </div>

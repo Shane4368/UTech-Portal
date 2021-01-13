@@ -1,6 +1,6 @@
 import React from "react";
 import utechCrest from "../../assets/utech-crest.png";
-import "./SecurityQuestionsPage.css";
+import "./SecurityQuestionsPage.scss";
 
 
 function SecurityQuestionsPage(): JSX.Element {

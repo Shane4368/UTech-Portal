@@ -1,6 +1,6 @@
 import React from "react";
 import utechCrest from "../../assets/utech-crest.png";
-import "./FooterComponent.css";
+import "./FooterComponent.scss";
 
 const institutionName = "University of Technology, Jamaica";
 

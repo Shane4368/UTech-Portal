@@ -4,50 +4,52 @@
     padding: 1em;
     bottom: 0;
     font-size: 12px;
-}
 
-.FooterComponent .flex-container {
-    display: flex;
+    >div:nth-of-type(2) {
+        text-align: center;
+        border-top: 1px solid var(--site-colour-1);
+    }
+
+    .flex-container {
+        display: flex;
+
+        >div {
+            flex: 1;
+            display: inline-block;
+        }
+
+        .institution {
+            >div {
+                display: inline-block;
+            }
+
+            img {
+                max-width: 60px;
+                padding: 0;
+                margin: 0;
+            }
+
+            address {
+                font-style: normal;
+            }
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    }
 }
 
 @media only screen and (max-width:685px) {
     .FooterComponent .flex-container {
         display: block;
     }
-}
-
-.FooterComponent .flex-container>div {
-    flex: 1;
-    display: inline-block;
-}
-
-.FooterComponent .flex-container .institution>div {
-    display: inline-block;
-}
-
-.FooterComponent .flex-container .institution img {
-    max-width: 60px;
-    padding: 0;
-    margin: 0;
-}
-
-.FooterComponent .flex-container .institution address {
-    font-style: normal;
-}
-
-.FooterComponent>div:nth-of-type(2) {
-    text-align: center;
-    border-top: 1px solid var(--site-colour-1);
-}
-
-.FooterComponent .flex-container span {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.FooterComponent .flex-container ul {
-    list-style-type: none;
-    padding: 0;
 }
 
 .FooterComponent,

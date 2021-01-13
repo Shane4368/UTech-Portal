@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import "./TopNavbarComponent.css";
+import "./TopNavbarComponent.scss";
 
 function TopNavbarComponent(): JSX.Element {
     const pathname = useLocation().pathname;
 
     React.useEffect(() => {
-        const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("nav a");
+        const links: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("nav>a");
 
         links.forEach(link => {
             link.className = link.href.includes(pathname) ? "active" : "";

@@ -1,4 +1,4 @@
-import "./ContainerComponent.css";
+import "./ContainerComponent.scss";
 
 function ContainerComponent(props: { [k: string]: any }): JSX.Element {
     return (

@@ -4,64 +4,64 @@
     overflow: hidden;
     border-radius: 0.5em 0.5em 0 0;
     font-size: 14px;
-}
 
-.ContainerComponent>div:nth-child(odd) {
-    background-color: var(--site-dim-colour);
-}
+    >div {
+        padding: 0 8px;
 
-.ContainerComponent>div {
-    padding: 0 8px;
-}
+        &:hover {
+            text-decoration: underline;
+            color: var(--focus-text-colour);
+            cursor: pointer;
+        }
 
-.ContainerComponent>div:hover {
-    text-decoration: underline;
-    color: var(--focus-text-colour);
-    cursor: pointer;
-}
+        &:nth-child(odd) {
+            background-color: var(--site-dim-colour);
+        }
+    }
 
-.ContainerComponent .title {
-    padding: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--site-base-colour);
-}
+    .title {
+        padding: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--site-base-colour);
 
-.ContainerComponent .title.bg-colour-green {
-    background-color: #22cdba;
-}
+        &.bg-colour-green {
+            background-color: #22cdba;
+        }
 
-.ContainerComponent .title.bg-colour-dark-green {
-    background-color: #168f54;
-}
+        &.bg-colour-dark-green {
+            background-color: #168f54;
+        }
 
-.ContainerComponent .title.bg-colour-blue {
-    background-color: #447be2;
-}
+        &.bg-colour-blue {
+            background-color: #447be2;
+        }
+    }
 
-.ContainerComponent .description {
-    border: 1px solid var(--site-colour-1);
-    border-left: none;
-    border-right: none;
-    text-decoration: none;
-}
+    .description {
+        border: 1px solid var(--site-colour-1);
+        border-left: none;
+        border-right: none;
+        text-decoration: none;
+    }
 
-.ContainerComponent .title:hover,
-.ContainerComponent .description:hover {
-    text-decoration: none;
-    cursor: default;
-    color: var(--site-colour-3);
-}
+    .title:hover,
+    .description:hover {
+        color: var(--site-colour-3);
+        text-decoration: none;
+        cursor: default;
+    }
 
-.ContainerComponent .title:hover {
-    color: var(--site-base-colour);
-}
+    .title:hover {
+        color: var(--site-base-colour);
+    }
 
-.ContainerComponent a {
-    color: var(--hyperlink-colour);
-    text-decoration: none;
-}
+    a {
+        color: var(--hyperlink-colour);
+        text-decoration: none;
 
-.ContainerComponent a:hover {
-    text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

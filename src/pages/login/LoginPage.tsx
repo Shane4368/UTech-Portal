@@ -1,6 +1,6 @@
 import React from "react";
 import utechCrest from "../../assets/utech-crest.png";
-import "./LoginPage.css";
+import "./LoginPage.scss";
 
 
 function LoginPage(): JSX.Element {

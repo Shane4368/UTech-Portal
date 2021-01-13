@@ -8,7 +8,7 @@ import HomePage from "./pages/home/HomePage";
 import StudentPage from "./pages/student/StudentPage";
 import SettingsPage from "./pages/settings/SettingsPage";
 
-import "./index.css";
+import "./index.scss";
 
 function App(): JSX.Element {
     React.useEffect(() => {

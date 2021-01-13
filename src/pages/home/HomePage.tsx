@@ -8,30 +8,14 @@ import IntrayData from "./intray.json";
 import ImportantDatesData from "./important-dates.json";
 import PersonalLinksData from "./personal-links.json";
 
-import "../../components/container/ContainerComponent.css";
-import "./ImportantDates.css";
-import "./HomePage.css";
-
-type PersonalLink = {
-    name: string;
-    url: string;
-};
-
-type ImportantDate = {
-    date: string;
-    event: string;
-};
+import "../../components/container/ContainerComponent.scss";
+import "./ImportantDates.scss";
+import "./HomePage.scss";
 
 function HomePage(): JSX.Element {
     React.useEffect(() => {
         document.title = "UTech Portal | Home";
     }, []);
-
-    const memoizedValues = React.useMemo(() => [
-        NoticeBoardData, IntrayData, ImportantDatesData, PersonalLinksData
-    ], []);
-
-    const [noticeBoard, intray, importantDates, personalLinks] = memoizedValues;
 
     return (
         <div>
@@ -40,39 +24,38 @@ function HomePage(): JSX.Element {
             <div className="panel-container">
                 <div className="left-panel">
                     <ul>
-                        <li><a href="#Notice_Board">{noticeBoard.label}</a></li>
-                        <li><a href="#Intray">{intray.label}</a></li>
-                        <li><a href="#Personal_Links">{personalLinks.label}</a></li>
+                        <li><a href="#Notice_Board">{NoticeBoardData.label}</a></li>
+                        <li><a href="#Intray">{IntrayData.label}</a></li>
+                        <li><a href="#Personal_Links">{PersonalLinksData.label}</a></li>
                     </ul>
                 </div>
 
                 <div className="middle-panel">
                     <ContainerComponent>
                         <div id="Notice_Board" className="title bg-colour-green">
-                            {noticeBoard.label}
+                            {NoticeBoardData.label}
                         </div>
                         {
-                            (noticeBoard.rows as string[])
-                                .map(x => (<div>{x}</div>))
+                            NoticeBoardData.rows.map(x => (<div>{x}</div>))
                         }
                     </ContainerComponent>
 
                     <ContainerComponent>
                         <div id="Intray" className="title bg-colour-blue">
-                            {intray.label}
+                            {IntrayData.label}
                         </div>
                         {
-                            (intray.rows as string[]).map(x => (<div>{x}</div>))
+                            IntrayData.rows.map(x => (<div>{x}</div>))
                         }
                     </ContainerComponent>
 
                     <ContainerComponent>
                         <div id="Personal_Links" className="title bg-colour-green">
-                            {personalLinks.label}
+                            {PersonalLinksData.label}
                         </div>
-                        <div className="description">{personalLinks.description}</div>
+                        <div className="description">{PersonalLinksData.description}</div>
                         {
-                            (personalLinks.rows as PersonalLink[])
+                            PersonalLinksData.rows
                                 .map(x => (<div><a href={x.url}>{x.name}</a></div>))
                         }
                     </ContainerComponent>
@@ -80,11 +63,11 @@ function HomePage(): JSX.Element {
 
                 <div className="right-panel">
                     <div id="ImportantDatesContainer">
-                        <div><span>{importantDates.label}</span></div>
+                        <div><span>{ImportantDatesData.label}</span></div>
                         <table>
-                            <caption>{importantDates.description}</caption>
+                            <caption>{ImportantDatesData.description}</caption>
                             {
-                                (importantDates.rows as ImportantDate[]).map(x => {
+                                ImportantDatesData.rows.map(x => {
                                     return (
                                         <tr>
                                             <td>{x.date}</td>

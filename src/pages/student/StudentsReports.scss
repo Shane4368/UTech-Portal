@@ -4,26 +4,28 @@
     border: 1px solid var(--site-colour-1);
     overflow: hidden;
     border-radius: 0.5em 0.5em 0 0;
-}
 
-#StudentsReportsContainer span {
-    display: inherit;
-    background-color: #ffa500;
-    font-weight: bold;
-    color: var(--site-base-colour);
-    padding: 8px;
-}
+    span {
+        display: inherit;
+        background-color: #ffa500;
+        font-weight: bold;
+        color: var(--site-base-colour);
+        padding: 8px;
+    }
 
-#StudentsReportsContainer>div:nth-of-type(2) {
-    padding: 0 8px;
-}
+    >div {
+        &:nth-of-type(2) {
+            padding: 0 8px;
+        }
 
-#StudentsReportsContainer>div:nth-last-of-type(1) {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-}
+        &:nth-last-of-type(1) {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
 
-#StudentsReportsContainer>div:nth-last-of-type(1)>button:hover {
-    cursor: pointer;
+            >button:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
