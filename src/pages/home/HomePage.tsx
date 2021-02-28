@@ -18,68 +18,92 @@ function HomePage(): JSX.Element {
     }, []);
 
     return (
-        <div>
+        <div className="root-content-container">
             <TopNavbarComponent />
 
-            <div className="panel-container">
-                <div className="left-panel">
-                    <ul>
-                        <li><a href="#Notice_Board">{NoticeBoardData.label}</a></li>
-                        <li><a href="#Intray">{IntrayData.label}</a></li>
-                        <li><a href="#Personal_Links">{PersonalLinksData.label}</a></li>
-                    </ul>
-                </div>
-
-                <div className="middle-panel">
-                    <ContainerComponent>
-                        <div id="Notice_Board" className="title bg-colour-green">
-                            {NoticeBoardData.label}
-                        </div>
-                        {
-                            NoticeBoardData.rows.map(x => (<div>{x}</div>))
-                        }
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div id="Intray" className="title bg-colour-blue">
-                            {IntrayData.label}
-                        </div>
-                        {
-                            IntrayData.rows.map(x => (<div>{x}</div>))
-                        }
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div id="Personal_Links" className="title bg-colour-green">
-                            {PersonalLinksData.label}
-                        </div>
-                        <div className="description">{PersonalLinksData.description}</div>
-                        {
-                            PersonalLinksData.rows
-                                .map(x => (<div><a href={x.url}>{x.name}</a></div>))
-                        }
-                    </ContainerComponent>
-                </div>
-
-                <div className="right-panel">
-                    <div id="ImportantDatesContainer">
-                        <div><span>{ImportantDatesData.label}</span></div>
-                        <table>
-                            <caption>{ImportantDatesData.description}</caption>
-                            {
-                                ImportantDatesData.rows.map(x => {
-                                    return (
-                                        <tr>
-                                            <td>{x.date}</td>
-                                            <td>{x.event}</td>
-                                        </tr>
-                                    );
-                                })
-                            }
-                        </table>
-                    </div>
-                </div>
+            <div className="panel-left">
+                <ul>
+                    <li>
+                        <a href="#NoticeBoard">{NoticeBoardData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#Intray">{IntrayData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#PersonalLinks">{PersonalLinksData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#ImportantDates">{ImportantDatesData.label}</a>
+                    </li>
+                </ul>
             </div>
+
+            <main className="main-container">
+                <div>
+                    <ContainerComponent
+                        id="NoticeBoard"
+                        title={NoticeBoardData.label}
+                        colour="colour-bg-green">
+                        {
+                            NoticeBoardData.rows.map(x => (
+                                <tr><td><span>{x}</span></td></tr>
+                            ))
+                        }
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="Intray"
+                        title={IntrayData.label}
+                        colour="colour-bg-blue">
+                        {
+                            IntrayData.rows.map(x => (
+                                <tr><td><span>{x}</span></td></tr>
+                            ))
+                        }
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="PersonalLinks"
+                        title={PersonalLinksData.label}
+                        colour="colour-bg-green">
+                        <tr>
+                            <td className="description">
+                                {PersonalLinksData.description}
+                            </td>
+                        </tr>
+                        {
+                            PersonalLinksData.rows.map(x => (
+                                <tr>
+                                    <td>
+                                        <a target="_blank"
+                                            rel="noreferrer"
+                                            href={x.url}>{x.name}
+                                        </a>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </ContainerComponent>
+                </div>
+
+                <div>
+                    <ContainerComponent id="ImportantDates" title={ImportantDatesData.label}>
+                        <tr>
+                            <td className="description" colSpan={2}>
+                                {ImportantDatesData.description}
+                            </td>
+                        </tr>
+                        {
+                            ImportantDatesData.rows.map(x => (
+                                <tr>
+                                    <td>{x.date}</td>
+                                    <td>{x.event}</td>
+                                </tr>
+                            ))
+                        }
+                    </ContainerComponent>
+                </div>
+            </main>
 
             <FooterComponent />
         </div>

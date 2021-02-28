@@ -19,84 +19,108 @@ function StudentPage(): JSX.Element {
     }, []);
 
     return (
-        <div>
+        <div className="root-content-container">
             <TopNavbarComponent />
 
-            <div className="panel-container">
-                <div className="left-panel">
-                    <ul>
-                        <li><a href="#Academic_Information">{AcademicInformationData.label}</a></li>
-                        <li><a href="#Fee_Information">{FeeInformationData.label}</a></li>
-                        <li><a href="#Career_Placements">{CareerAndPlacementsData.label}</a></li>
-                        <li><a href="#Academic_Advisor">Academic Advisor</a></li>
-                    </ul>
-                </div>
-
-                <div className="middle-panel">
-                    <ContainerComponent>
-                        <div id="Academic_Information" className="title bg-colour-green">
-                            {AcademicInformationData.label}
-                        </div>
-                        {AcademicInformationData.rows.map(x => (<div>{x}</div>))}
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div id="Fee_Information" className="title bg-colour-green">
-                            {FeeInformationData.label}
-                        </div>
-                        {FeeInformationData.rows.map(x => (<div>{x}</div>))}
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div id="Career_Placements" className="title bg-colour-green">
-                            {CareerAndPlacementsData.label}
-                        </div>
-                        {CareerAndPlacementsData.rows.map(x => (<div>{x}</div>))}
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div id="Academic_Advisor" className="title bg-colour-green">
-                            Academic Advisor
-                        </div>
-                        <div className="description">
-                            Information about your personal tutor
-                        </div>
-                        <div>Details of your advisor</div>
-                    </ContainerComponent>
-                </div>
-
-                <div className="right-panel">
-                    <div id="StudentsReportsContainer">
-                        <div><span>Student's Reports</span></div>
-                        <div>
-                            Please select a report from the drop down list and click the 'Run Report' button
-                            in order to view the report.
-                        </div>
-                        <div>
-                            <select>
-                                <option>-- Select Report --</option>
-                                <option>Provisional Transcript of Results</option>
-                                <option>Exam Timetable</option>
-                                <option>Account Balance Information</option>
-                                <option>Account Transactions</option>
-                            </select>
-                            <button>Run Report</button>
-                        </div>
-                    </div>
-
-                    <ContainerComponent>
-                        <div className="title bg-colour-blue">{StudentActionsData.label}</div>
-                        <div className="description">{StudentActionsData.description}</div>
-                        {StudentActionsData.rows.map(x => (<div>{x}</div>))}
-                    </ContainerComponent>
-
-                    <ContainerComponent>
-                        <div className="title bg-colour-dark-green">{UsefulLinksData.label}</div>
-                        <div className="description">{UsefulLinksData.description}</div>
-                        {UsefulLinksData.rows.map(x => (<div>{x}</div>))}
-                    </ContainerComponent>
-                </div>
+            <div className="panel-left">
+                <ul>
+                    <li>
+                        <a href="#AcademicInformation">{AcademicInformationData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#FeeInformation">{FeeInformationData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#CareerPlacements">{CareerAndPlacementsData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#AcademicAdvisor">Academic Advisor</a>
+                    </li>
+                    <li>
+                        <a href="#StudentsReports">Student's Reports</a>
+                    </li>
+                    <li>
+                        <a href="#StudentActions">{StudentActionsData.label}</a>
+                    </li>
+                    <li>
+                        <a href="#UsefulLinks">{UsefulLinksData.label}</a>
+                    </li>
+                </ul>
             </div>
+
+            <main className="main-container">
+                <div>
+                    <ContainerComponent
+                        id="AcademicInformation"
+                        title={AcademicInformationData.label}
+                        colour="colour-bg-green">
+                        {AcademicInformationData.rows.map(x => (<tr><td><span>{x}</span></td></tr>))}
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="FeeInformation"
+                        title={FeeInformationData.label}
+                        colour="colour-bg-green">
+                        {FeeInformationData.rows.map(x => (<tr><td><span>{x}</span></td></tr>))}
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="CareerPlacements"
+                        title={CareerAndPlacementsData.label}
+                        colour="colour-bg-green">
+                        {CareerAndPlacementsData.rows.map(x => (<tr><td><span>{x}</span></td></tr>))}
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="AcademicAdvisor"
+                        title="Academic Advisor"
+                        colour="colour-bg-green">
+                        <tr>
+                            <td className="description">Information about your personal tutor</td>
+                        </tr>
+                        <tr><td>Details of your advisor</td></tr>
+                    </ContainerComponent>
+                </div>
+
+                <div>
+                    <ContainerComponent id="StudentsReports" title="Student's Reports">
+                        <tr>
+                            <td className="description">
+                                Please select a report from the drop down list and click the 'Run Report' button
+                                in order to view the report.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="flex-container">
+                                <select defaultValue="-- Select Report --">
+                                    <option>-- Select Report --</option>
+                                    <option>Provisional Transcript of Results</option>
+                                    <option>Exam Timetable</option>
+                                    <option>Account Balance Information</option>
+                                    <option>Account Transactions</option>
+                                </select>
+                                <button>Run Report</button>
+                            </td>
+                        </tr>
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="StudentActions"
+                        title={StudentActionsData.label}
+                        colour="colour-bg-blue">
+                        <tr><td className="description">{StudentActionsData.description}</td></tr>
+                        {StudentActionsData.rows.map(x => (<tr><td><span>{x}</span></td></tr>))}
+                    </ContainerComponent>
+
+                    <ContainerComponent
+                        id="UsefulLinks"
+                        title={UsefulLinksData.label}
+                        colour="colour-bg-green-dark">
+                        <tr><td className="description">{UsefulLinksData.description}</td></tr>
+                        {UsefulLinksData.rows.map(x => (<tr><td><span>{x}</span></td></tr>))}
+                    </ContainerComponent>
+                </div>
+            </main>
 
             <FooterComponent />
         </div>

@@ -7,13 +7,18 @@ import SecurityQuestionsPage from "./pages/login/SecurityQuestionsPage";
 import HomePage from "./pages/home/HomePage";
 import StudentPage from "./pages/student/StudentPage";
 import SettingsPage from "./pages/settings/SettingsPage";
+import { getTheme, setTheme, listenSystemTheme } from "./common/theme";
 
 import "./index.scss";
 
 function App(): JSX.Element {
     React.useEffect(() => {
-        if (localStorage.getItem("theme") === "dark")
-            document.documentElement.setAttribute("data-theme", "dark");
+        const theme = getTheme();
+
+        if (theme === "dark")
+            setTheme("dark");
+        else if (theme === "system")
+            listenSystemTheme();
     }, []);
 
     return (

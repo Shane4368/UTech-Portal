@@ -1,7 +1,7 @@
 import React from "react";
-import utechCrest from "../../assets/utech-crest.png";
-import "./SecurityQuestionsPage.scss";
+import "./LoginPage.scss"; // Because SecurityQuestionsPage has same layout.
 
+const utechCrestFilepath = process.env.PUBLIC_URL + "/assets/utech-crest.png";
 
 function SecurityQuestionsPage(): JSX.Element {
     React.useEffect(() => {
@@ -14,38 +14,27 @@ function SecurityQuestionsPage(): JSX.Element {
     }
 
     return (
-        <div className="login-container">
-            <form autoComplete="off" onSubmit={handleSubmit}>
+        <form className="login-form" autoComplete="off" onSubmit={handleSubmit}>
 
-                <div>
-                    <img src={utechCrest}></img>
-                    <span>Security Questions</span>
-                </div>
+            <div>
+                <img src={utechCrestFilepath} />
+                <h3>Security Questions</h3>
+            </div>
 
-                <div className="gray">
-                    <p>Answer the questions displayed and then click on the "Continue" button.</p>
-                </div>
+            <div>
+                <p>Answer the questions displayed and then click on the "Continue" button.</p>
+            </div>
 
-                <div>
-                    <label htmlFor="dob">What is your Date of Birth?</label>
-                    <input
-                        id="dob"
-                        type="number"
-                        placeholder="DDMMYY"
-                        required>
-                    </input>
-                </div>
+            <div>
+                <label htmlFor="dob">What is your Date of Birth?</label>
+                <input id="dob" type="number" placeholder="DDMMYY" required />
+            </div>
 
-                <div>
-                    <input
-                        id="continue-btn"
-                        type="submit"
-                        value="Continue">
-                    </input>
-                </div>
+            <div>
+                <input className="login-submit-btn" type="submit" value="Continue" />
+            </div>
 
-            </form>
-        </div>
+        </form>
     );
 }
 

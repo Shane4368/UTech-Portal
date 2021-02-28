@@ -14,14 +14,14 @@ function TopNavbarComponent(): JSX.Element {
     }, []);
 
     return (
-        <div className="TopNavbarComponent">
+        <header className="TopNavbarComponent">
             <nav>
                 <NavLink to="/home">Home</NavLink>
                 <NavLink to="/student">Student</NavLink>
                 <NavLink to="/settings">Settings</NavLink>
                 <NavLink to="/">Logout</NavLink>
             </nav>
-        </div>
+        </header>
     );
 }
 

@@ -1,8 +1,8 @@
 import React from "react";
-import utechCrest from "../../assets/utech-crest.png";
 import "./FooterComponent.scss";
 
 const institutionName = "University of Technology, Jamaica";
+const utechCrestFilepath = process.env.PUBLIC_URL + "/assets/utech-crest.png";
 
 function FooterComponent(): JSX.Element {
     const handleClick = (): void => window.scrollTo(0, 0);
@@ -28,7 +28,7 @@ function FooterComponent(): JSX.Element {
 
             <div className="flex-container">
                 <div className="institution">
-                    <div><img alt="UTech Crest" src={utechCrest}></img></div>
+                    <div><img alt="UTech Crest" src={utechCrestFilepath} /></div>
 
                     <div>
                         <address>
@@ -46,23 +46,35 @@ function FooterComponent(): JSX.Element {
                     <span>Social Media</span>
                     <ul>
                         <li>
-                            <a target="_blank" rel="noreferrer nofollow" href="https://www.facebook.com/UTechJa/">Facebook</a>
+                            <a target="_blank"
+                                rel="noreferrer nofollow"
+                                href="https://www.facebook.com/UTechJa/">Facebook
+                            </a>
                         </li>
                         <li>
-                            <a target="_blank" rel="noreferrer nofollow" href="https://twitter.com/utechjamaica">Twitter</a>
+                            <a target="_blank"
+                                rel="noreferrer nofollow"
+                                href="https://www.instagram.com/utechjamaica/">Instagram
+                            </a>
                         </li>
                         <li>
-                            <a target="_blank" rel="noreferrer nofollow" href="https://www.instagram.com/utechjamaica/">Instagram</a>
+                            <a target="_blank"
+                                rel="noreferrer nofollow"
+                                href="https://twitter.com/utechjamaica">Twitter
+                            </a>
                         </li>
                         <li>
-                            <a target="_blank" rel="noreferrer nofollow" href="https://www.youtube.com/user/utechjamaica">YouTube</a>
+                            <a target="_blank"
+                                rel="noreferrer nofollow"
+                                href="https://www.youtube.com/user/utechjamaica">YouTube
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <p>Copyright © 2020 {institutionName}. All rights reserved.</p>
+                <p>Copyright © 2021 {institutionName}. All rights reserved.</p>
             </div>
         </footer>
     );

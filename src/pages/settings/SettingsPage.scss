@@ -1,44 +1,57 @@
-.panel-container .left-panel button {
-    outline: none;
-    font-size: 16px;
-    font-family: inherit;
-    background-color: inherit;
-    margin-top: 1em;
-    border: none;
-    display: block;
+@use "../../common/colours";
+
+.panel-left>button {
     padding: 1em;
     width: 100%;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+    border: none;
+
+    &:nth-of-type(1) {
+        margin-top: 1em;
+    }
 
     &:hover {
+        background-color: var(--site-colour-1);
+        color: var(--site-colour-text-important);
         cursor: pointer;
-        background-color: var(--site-base-colour);
-        color: var(--site-colour-3);
     }
 }
 
-#settings-panel {
-    flex: 4;
-    font-size: 14px;
-    border-radius: 0.5em;
-    border: 1px solid var(--site-colour-1);
-    margin: 1em 0;
+.main-container.settings {
+    margin: auto;
+    box-sizing: border-box;
 
-    .container {
-        padding: 0 1em 2.5em;
+    @media only screen and (min-width:600px) {
+        max-width: calc(100vw - 200px - 2em);
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
+    @media only screen and (max-width:599px) {
+        max-width: calc(100vw - 2em);
+    }
 
-        tr th,
-        tr td {
-            padding: 4px 8px;
+    >.container {
+        width: 100%;
+
+        &:not(.selected) {
+            display: none;
         }
 
-        tr td:nth-of-type(1) {
-            font-weight: bold;
-            text-align: right;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            tr th,
+            tr td {
+                padding: 0.5rem;
+            }
+
+            tr td:nth-of-type(1) {
+                font-weight: bold;
+                text-align: right;
+            }
         }
     }
 }
@@ -51,60 +64,77 @@
     }
 }
 
-/* ----------------- Personal Information ----------------- */
 #PersonalInformation {
-    table tr:nth-child(even) {
-        background-color: var(--site-dim-colour);
-    }
+    table tr {
+        &:nth-child(even) {
+            background-color: var(--site-colour-1);
+        }
 
-    table tr th {
-        text-align: left;
-        background-color: #447be2;
-        color: var(--site-base-colour);
+        th {
+            text-align: left;
+            background-color: colours.$blue;
+            color: var(--site-colour-base);
+        }
     }
 
     button {
-        margin-top: 8px;
-        margin-left: 50%;
-        transform: translateX(-50%);
-        padding: 4px 8px;
-        cursor: pointer;
-    }
-}
-
-/* ----------------- Appearance ----------------- */
-#Appearance div {
-    &:nth-of-type(2) {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .theme-container {
         display: block;
+        margin: 1em auto;
         padding: 1em;
-        border-radius: 8px;
-        border: 1px solid transparent;
-        width: fit-content;
+        background-color: colours.$blue;
+        color: var(--site-colour-base);
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
 
         &:hover {
-            border-color: var(--site-colour-1);
+            background-color: lighten($color: colours.$blue, $amount: 10);
             cursor: pointer;
         }
 
-        >div {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            border: 1px solid var(--site-colour-1);
+        &:active {
+            background-color: darken($color: colours.$blue, $amount: 10);
+        }
+    }
+}
+
+#Appearance>div {
+    &:nth-of-type(2) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .theme-btn {
+        display: block;
+        padding: 1em;
+        border: 1px solid transparent;
+
+        &:hover,
+        &.active {
+            border-color: var(--border-colour);
+            cursor: pointer;
         }
 
         .theme-name {
-            border-radius: 0;
-            border: none;
-            height: fit-content;
+            margin-top: 1em;
             text-align: center;
+            font-weight: bold;
+            border: none;
+            pointer-events: none;
         }
     }
+}
+
+#theme-box-light,
+#theme-box-dark,
+#theme-box-system {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--border-colour);
+    pointer-events: none;
 }
 
 #theme-box-light {
@@ -112,5 +142,9 @@
 }
 
 #theme-box-dark {
-    background-color: var(--site-colour-1);
+    background-color: #0a0a0a;
+}
+
+#theme-box-system {
+    background-image: linear-gradient(to right, white 50%, #0a0a0a 50%);
 }

@@ -1,88 +1,70 @@
-.login-container {
-    border-radius: 1em;
-    border: 1px solid var(--site-colour-1);
+.login-form {
+    margin: auto;
+    padding: 1em;
     max-width: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 1px solid var(--border-colour);
+    box-sizing: border-box;
 
-    form {
-        margin: 1em;
-        font-size: 14px;
-
-        >div {
-            margin: 1em;
-
-            &:nth-of-type(1) {
-                text-align: center;
-
-                >img {
-                    height: 60px;
-                    display: block;
-                    margin: auto;
-                }
-
-                >span {
-                    display: block;
-                    font-weight: bold;
-                    font-size: 18px;
-                }
-            }
-
-            &:nth-last-of-type(1)>span {
-                display: block;
-                text-align: right;
-                color: var(--hyperlink-colour);
-
-                &:hover {
-                    text-decoration: underline;
-                    cursor: pointer;
-                }
-            }
-
-            >input {
-                width: calc(100% - 20px);
-                padding: 8px;
-            }
-        }
-
-        /* Login instructions */
-        .red {
-            color: var(--login-notice-text-colour);
-            background-color: var(--login-notice-bg-colour);
-        }
-
-        /* Forgot password instructions */
-        .gray {
-            color: var(--login-info-text-colour);
-            background-color: var(--login-info-bg-colour);
-        }
-    }
-}
-
-@media only screen and (max-width:630px) {
-    .login-container {
+    @media only screen and (max-width:630px) {
         width: calc(100vw - 2em);
     }
-}
 
-#login-btn {
-    background-color: var(--login-btn-colour);
-    color: white;
-    width: 100%;
-    font-size: 14px;
-    padding: 1em;
-    font-weight: bolder;
-    border: 2px solid var(--login-btn-colour);
+    >div {
+        margin: 1em;
 
-    &:hover {
-        cursor: pointer;
-        background-color: rgba(0, 0, 128, 0.3);
-        color: var(--login-btn-hover-colour);
-        transition-duration: 0.5s;
-        -o-transition-duration: 0.5s;
-        -moz-transition-duration: 0.5s;
-        -webkit-transition-duration: 0.5s;
+        &:nth-of-type(1) {
+            text-align: center;
+
+            img {
+                height: 60px;
+                display: block;
+                margin: auto;
+            }
+        }
+
+        &:nth-last-of-type(1)>span {
+            display: block;
+            margin-left: auto;
+            width: fit-content;
+            color: var(--site-colour-text-hyperlink);
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        &.red {
+            color: var(--login-notice-colour-text);
+        }
+
+        .login-submit-btn {
+            padding: 1em;
+            width: 100%;
+            background-color: navy;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+
+            &:hover {
+                background-color: lighten($color: navy, $amount: 10);
+                cursor: pointer;
+            }
+
+            &:active {
+                background-color: darken($color: navy, $amount: 10);
+            }
+
+            &:focus {
+                color: white;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
     }
 }
